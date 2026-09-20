@@ -1,6 +1,8 @@
 import './PostList.css'
 import Post from './Post'
 import type { Post as PostType } from '../types/Post'
+import withLogger from '../hoc/withLogger'
+
 
 const posts: PostType[] = [
     
@@ -28,7 +30,7 @@ const posts: PostType[] = [
     
 ]
 
-export default function PostList() {
+function PostList() {
   return (
     <main className="post-page">
       <p className="section-label">PUBLICATIONS</p>
@@ -42,3 +44,5 @@ export default function PostList() {
     </main>
   )
 }
+
+export default withLogger(PostList, 'PostList')  

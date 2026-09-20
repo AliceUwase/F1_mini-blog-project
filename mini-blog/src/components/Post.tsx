@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import './Post.css'
 import type { Post as PostType } from '../types/Post'
 
@@ -5,7 +6,7 @@ type PostProps = {
   post: PostType
 }
 
-export default function Post({ post }: PostProps) {
+function Post({ post }: PostProps) {
   const isFeaturedAuthor = post.author === 'Keza Grace'
 
   return (
@@ -30,3 +31,5 @@ export default function Post({ post }: PostProps) {
     </article>
   )
 }
+
+export default memo(Post)
