@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import './Post.css'
-import type { Post as PostType } from '../types/Post'
+import type { Post as PostType } from '../../types/Post'
 
 type PostProps = {
   post: PostType

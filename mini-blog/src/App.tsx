@@ -1,5 +1,5 @@
-import Header  from './components/Header'
-import PostList from './components/PostList'
+import Header  from './components/Header/Header'
+import PostList from './components/PostList/PostList'
 import './App.css'
 
 function App() {

@@ -1,7 +1,7 @@
 import './PostList.css'
-import Post from './Post'
-import type { Post as PostType } from '../types/Post'
-import withLogger from '../hoc/withLogger'
+import Post from '../Post/Post'
+import type { Post as PostType } from '../../types/Post'
+import withLogger from '../../hoc/withLogger'
 
 
 const posts: PostType[] = [
