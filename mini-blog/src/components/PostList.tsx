@@ -1,3 +1,4 @@
+import './PostList.css'
 import Post from './Post'
 import type { Post as PostType } from '../types/Post'
 
@@ -28,16 +29,16 @@ const posts: PostType[] = [
 ]
 
 export default function PostList() {
-    return (
-        <main>
-            <h2>Latest Posts</h2>
+  return (
+    <main className="post-page">
+      <p className="section-label">PUBLICATIONS</p>
+      <h2 className="page-title">Latest Posts</h2>
 
-            <section className='post-list'>
-              {posts.map((post) => (
-                <Post key={post.id} post={post} />
-              )
-            )}
-            </section>
-        </main>
-    )
+      <section className="post-list">
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
+      </section>
+    </main>
+  )
 }

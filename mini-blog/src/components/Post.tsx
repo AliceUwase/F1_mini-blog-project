@@ -1,33 +1,32 @@
+import './Post.css'
 import type { Post as PostType } from '../types/Post'
 
 type PostProps = {
-    post: PostType
+  post: PostType
 }
 
 export default function Post({ post }: PostProps) {
-    // Check if the author is a featured author
-    const isFeaturedAuthor = post.author === 'Keza Grace'
+  const isFeaturedAuthor = post.author === 'Keza Grace'
 
-    return (
-        // apply a different class name based on whether the author is featured or not
-        <article className={isFeaturedAuthor ? 'post featured' : 'post'}>
-            <h2>{post.title}</h2>
+  return (
+    <article className={isFeaturedAuthor ? 'post featured' : 'post'}>
+      <div className="post-top">
+        <span className="post-tag">
+          {isFeaturedAuthor ? 'OOP' : 'Design Patterns'}
+        </span>
 
-            <p>
-                By {post.author} | {post.date}
-            </p>
+        {isFeaturedAuthor && (
+          <span className="featured-status">• Featured</span>
+        )}
 
-            <p>{post.content}</p>
+        <time dateTime={post.date}>▣ {post.date}</time>
+      </div>
 
-          {/* display a different label based on whether the author is featured or not */}
-            <span
-             style={{
-                color: isFeaturedAuthor ? '#b35309' : '#67418b',
-                fontWeight: isFeaturedAuthor ? 'bold' : 'normal',
-             }}
-            >
-               {isFeaturedAuthor ? 'Featured author' : 'Community post'} 
-            </span>
-        </article>
-    )
+      <h3>{post.title}</h3>
+
+      <p className="post-content">{post.content}</p>
+
+      <p className="post-author">Posted by {post.author}</p>
+    </article>
+  )
 }
