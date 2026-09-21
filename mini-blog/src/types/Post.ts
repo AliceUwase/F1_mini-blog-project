@@ -4,5 +4,6 @@ export type Post = {
     author: string
     content: string
     date: string
+    featured: boolean
 }
 
