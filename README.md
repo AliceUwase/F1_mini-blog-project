@@ -1,106 +1,99 @@
-# react-dev-formative-1
+# Dev Insights Mini Blog
 
-## Formative Assessment: React "Mini Blog" Project
+Dev Insights is a small React mini-blog application where developers can share programming tips, insights, and updates.
 
-**Submission:** Canvas Submission (link to your GitHub repository)
+## Requirements
 
-**Grading:** This project will contribute to your overall participation and formative assessment grade. Feedback will be provided to guide your learning.
+Before running the project, install:
 
-### Scenario:
+- Node.js
+- npm
 
-You are a junior developer at a startup called "Dev Insights." They want to create an internal "Mini Blog" platform where employees can share quick tips, insights, and updates related to web development. Your task is to build the foundation of this platform using React, demonstrating your understanding of TypeScript, Vite, components, styling, and optimization learned in the first three weeks. Please do not use any templates for this assesment.
+You can check that they are installed by running:
 
-### Project Requirements:
+```bash
+node --version
+npm --version
+```
 
-**1. Project Setup (Vite & TypeScript):**
+## Installation 
 
-*   Initialize a new React project using **Vite** with TypeScript support. Use the following command in your terminal:
-    ```bash
-    npm create vite@latest mini-blog -- --template react-ts
-    cd mini-blog
-    npm install
-    ```
-*   Ensure your project has a proper directory structure for components, styles, and potentially utility functions.
+Clone the repository and move into the project folder:
 
-**2. Core Components (React Basics & Component Types):**
+```bash
+git clone https://github.com/AliceUwase/F1_mini-blog-project.git
+cd mini-blog
+```
 
-*   **Header Component:**
-    *   A functional component displaying the "Dev Insights" logo (you can use a text-based logo for simplicity) and a navigation link to "New Post" (this link doesn't need to be functional for now).
-*   **PostList Component:**
-    *   A component that displays a list of blog posts. Initially, you can hardcode an array of 2-3 sample posts within this component.
-    *   Each post in the list should display:
-        *   Title
-        *   Author (Name)
-        *   A short preview (first few words of the content)
-        *   Date posted (you can hardcode a date for now)
-    *   Make sure to use propper types in typescript for the post object. (Week 1)
-*   **Post Component:**
-    *   A reusable component that renders a single blog post's details (title, author, content preview, date).
-    *   Decide whether to use a functional or a class component for this, and justify your choice in the README file based on what you learned in Week 3.
-*   **App Component:**
-    *   The root component that renders the `Header` and `PostList` components.
+Install the project dependencies:
 
-**3. Styling (CSS & Styling Techniques):**
+```bash
+npm install
+```
 
-*   Apply styling to your components using at least **two** of the following methods: (Week 3)
-    *   External CSS files
-    *   Inline styles
-    *   Styled Components (or any other CSS-in-JS library)
-*   Implement conditional styling for at least one element. For instance:
-    *   Highlight posts by a specific author with a different background color.
-    *   Show a "New!" badge next to posts published within the last 24 hours.
+Start the server:
 
-**4. Component Optimization & Higher-Order Components (HOCs):**
-
-*   Implement at least one example of component optimization to improve rendering performance. Consider: (Week 3)
-    *   Using `React.memo` or `PureComponent` to prevent unnecessary re-renders.
-    *   Using a unique `key` prop for each item when rendering lists.
-*   Create a simple HOC (e.g., `withLogger`) that logs a message to the console when a component is mounted and unmounted. Apply this HOC to at least one of your components.
-
-**5. Documentation (README):**
-
-*   In your GitHub repository's README file:
-    *   Provide clear instructions on how to install, run, and test the application. Remember to mention that this project uses Vite.
-    *   Explain your choices regarding component types (functional vs. class), styling methods, and optimization strategies.
-    *   Briefly reflect on any challenges you faced and how you overcame them.
-    *   Include a list of any external libraries/packages used.
-
-### GitHub Setup & Requirements:
+```bash
+npm run dev
+```
+Vite will provide a local URL, usually `http://localhost:5173`
 
 
-1. Create a new public GitHub repository for this assessment.
-2. Clone the repository to your local machine.
-3. Create your React project and complete the assessment inside this repository.
-4. Commit and push your work incrementally throughout development.
-5. Use clear and meaningful commit messages describing the changes made.
-6. Do not upload the entire completed application in one final commit.
-7. Do not commit node_modules.
-8. Ensure all files required to install and run the application are included.
-9. Ensure your latest work is pushed to GitHub before submitting.
+## Project Structure
 
-Your GitHub development history forms part of the evidence used when reviewing your work.
+```bash
+mini-blog/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── Header/
+│   │   ├── Post/
+│   │   └── PostList/
+│   ├── hoc/
+│   │   └── withLogger.tsx
+│   ├── types/
+│   │   └── Post.ts
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+├── package.json
+└── vite.config.ts
+```
 
-### Deliverables on Canvas:
+## My reflection
 
-1.  A link to your completed GitHub repository.
-2.  A short reflection (1-2 paragraphs) on your learning experience during the project. What did you find most valuable? What areas would you like to explore further?
+**1. Component Decision**
 
-### Assessment Criteria:
+  I used functional components throughout this project because they're simple, readable, and work well with modern React features like hooks, where the project used them in HOC to log mount/unmount events unlike class components which doesn't using them.
 
-*   **Functionality:** Does the application work as intended, fulfilling the core requirements?
-*   **Code Quality:** Is the code well-structured, readable, and maintainable? Does it adhere to React and TypeScript best practices?
-*   **Component Design:** Are components well-organized, reusable, and appropriately designed (functional vs. class)?
-*   **Styling:** Is styling implemented effectively using the chosen methods, and does it enhance the user interface?
-*   **Optimization & HOCs:** Are optimization techniques and HOCs implemented correctly to improve performance and code organization?
-*   **Documentation:** Is the README file clear, informative, and well-written?
-*   **Reflection:** Does the reflection demonstrate thoughtful engagement with the project and the learning materials?
+**2. Styling Decision**
 
-### Tips for Success:
+-  External CSS: This technique was used for the overall layout and card styling in the component CSS files (Header.css, Post.css and PostList.ccss)
 
-*   Start early and break down the project into smaller, manageable tasks.
-*   Refer back to the module materials and examples from the first three weeks.
-*   Use the React Developer Tools to debug and inspect your components.
-*   Don't hesitate to ask questions in class or on the discussion forums if you get stuck.
-*   Focus on understanding the concepts and applying them to the project rather than getting lost in complex features.
+- Inline styling: This technique was used in the post author/featured label in the JSX to conditionally change the text color and weight based on whether the author was featured.
 
-This project is designed to be a stepping stone in your React journey. Embrace the challenges, learn from your mistakes, and have fun building your "Mini Blog" application! Good luck!
+**3. Optimization and Higher-Order Components**
+
+- **`React.memo`:** The Post component used `React.memo` to avoid unnecessary re-renders when its props have not changed and improve the overall performance.
+
+- **Unique ID key:** Each post uses a unique ID as its React Key in order to track items on the list.
+  
+```bash
+<Post key={post.id} post={post} />
+```
+
+- **withLogger:** The Higher-Order Component(**withLogger.tsx**) logs a message in the conosle when a wrapped component is mounted and unmounted.
+
+## Challenge & Reflection
+
+One of the challenges i faced while working on the project was the TypeScript and conditional styling issues while implementing the featured post logic and HOC. I was able to resolve it by checking the props and  using a unique key for each item.
+
+Another challenge i encountered has to be implementing part 4 (Optimization and HOC). This was a challenging and yet interesting concept which i had to learn before i started working on the task. 
+
+## External Packages
+
+The project uses the following external packages:
+
+- React & React DOM, TypeScript, Vite, ESLint
+
