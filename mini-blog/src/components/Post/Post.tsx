@@ -27,7 +27,12 @@ function Post({ post }: PostProps) {
 
       <p className="post-content">{post.content}</p>
 
-      <p className="post-author">Posted by {post.author}</p>
+      <p className="post-author"
+      style={{
+        color: isFeaturedAuthor ? '#166534' : '#374151',
+        fontWeight: isFeaturedAuthor ? 800 : 600,
+    }}
+      >Posted by {post.author}</p>
     </article>
   )
 }

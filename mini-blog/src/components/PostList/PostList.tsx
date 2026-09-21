@@ -9,7 +9,7 @@ const posts: PostType[] = [
     {
         id:1,
         title: 'Understanding OOP.',
-        author: 'Keza Grace',
+        author: 'Alice Uwase',
         content: 'OOP is one of most fundamental software engineering paradigm that every Software Engineer must grasp when entering the Software Engineering world as a Java Programmer.',
         date: '2026-09-16',
     },
