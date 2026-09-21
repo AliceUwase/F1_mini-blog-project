@@ -7,7 +7,7 @@ type PostProps = {
 }
 
 function Post({ post }: PostProps) {
-  const isFeaturedAuthor = post.author === 'Keza Grace'
+  const isFeaturedAuthor = post.featured === true
 
   return (
     <article className={isFeaturedAuthor ? 'post featured' : 'post'}>
@@ -30,7 +30,7 @@ function Post({ post }: PostProps) {
       <p className="post-author"
       style={{
         color: isFeaturedAuthor ? '#166534' : '#374151',
-        fontWeight: isFeaturedAuthor ? 800 : 600,
+        fontWeight: isFeaturedAuthor ? 700 : 500,
     }}
       >Posted by {post.author}</p>
     </article>
