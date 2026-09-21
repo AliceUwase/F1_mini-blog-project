@@ -12,6 +12,7 @@ const posts: PostType[] = [
         author: 'Alice Uwase',
         content: 'OOP is one of most fundamental software engineering paradigm that every Software Engineer must grasp when entering the Software Engineering world as a Java Programmer.',
         date: '2026-09-16',
+        featured: true,
     },
     {
         id:2,
@@ -19,6 +20,7 @@ const posts: PostType[] = [
         author: 'Lisa Kami',
         content: 'Simple and practical explanation of 7 common design patterns in Python with clear runnable examples and trade-offs for real projects.',
         date: '2026-09-17',
+        featured: false,
     },
     {
         id:3,
@@ -26,6 +28,7 @@ const posts: PostType[] = [
         author: 'Spike Lee',
         content: 'Interviews can be nerve-wracking, but proper preparation helps candidates avoid common mistakes.',
         date: '2026-09-18',
+        featured: false,
     },
     
 ]
